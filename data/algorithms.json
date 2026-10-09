@@ -1,0 +1,632 @@
+{
+  "note": "reference pseudocode for trainer; compare side by side, do not treat as production code",
+  "algorithms": [
+    {
+      "id": "binsearch-answer",
+      "title": "Binary search on answer",
+      "topicId": "bsanswer",
+      "reference": "lo = low, hi = high\nwhile lo < hi:\n  mid = (lo + hi) // 2\n  if feasible(mid): hi = mid\n  else: lo = mid + 1\nanswer = lo",
+      "blanks": [
+        {
+          "prompt": "fill the update step",
+          "template": "lo = low, hi = high\nwhile lo < hi:\n  mid = (lo + hi) // 2\n  if feasible(mid): ___\n  else: lo = mid + 1",
+          "answer": "hi = mid",
+          "weight": 3
+        },
+        {
+          "prompt": "fill the else branch",
+          "template": "if feasible(mid): hi = mid\n  else: ___",
+          "answer": "lo = mid + 1",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "lo = low, hi = high",
+        "while lo < hi:",
+        "mid = (lo + hi) // 2",
+        "if feasible(mid): hi = mid",
+        "else: lo = mid + 1",
+        "answer = lo"
+      ],
+      "distractors": [
+        "if feasible(mid): lo = mid",
+        "mid = (lo + hi + 1) // 2"
+      ]
+    },
+    {
+      "id": "dsu",
+      "title": "Disjoint set union",
+      "topicId": "dsu",
+      "reference": "parent[x] = x; size[x] = 1\nfind(x):\n  if parent[x] != x: parent[x] = find(parent[x])\n  return parent[x]\nunion(a, b):\n  a = find(a); b = find(b)\n  if a == b: return\n  if size[a] < size[b]: swap(a, b)\n  parent[b] = a; size[a] += size[b]",
+      "blanks": [
+        {
+          "prompt": "fill the path compression line",
+          "template": "find(x):\n  if parent[x] != x: ___\n  return parent[x]",
+          "answer": "parent[x] = find(parent[x])",
+          "weight": 3
+        },
+        {
+          "prompt": "fill the attach step",
+          "template": "if size[a] < size[b]: swap(a, b)\n___",
+          "answer": "parent[b] = a",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "parent[x] = x; size[x] = 1",
+        "if parent[x] != x: parent[x] = find(parent[x])",
+        "return parent[x]",
+        "a = find(a); b = find(b)",
+        "if size[a] < size[b]: swap(a, b)",
+        "parent[b] = a; size[a] += size[b]"
+      ],
+      "distractors": [
+        "parent[a] = b; size[b] += size[a]",
+        "if parent[x] == x: parent[x] = x"
+      ]
+    },
+    {
+      "id": "dijkstra",
+      "title": "Dijkstra",
+      "topicId": "dijkstra",
+      "reference": "dist[s] = 0; pq = [(0, s)]\nwhile pq not empty:\n  d, u = pop_min(pq)\n  if d != dist[u]: continue\n  for (v, w) in adj[u]:\n    if dist[v] > d + w:\n      dist[v] = d + w; push(pq, (dist[v], v))",
+      "blanks": [
+        {
+          "prompt": "fill the skip-stale-entry check",
+          "template": "d, u = pop_min(pq)\n___\nfor (v, w) in adj[u]: ...",
+          "answer": "if d != dist[u]: continue",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the relax step",
+          "template": "if dist[v] > d + w:\n  ___",
+          "answer": "dist[v] = d + w",
+          "weight": 2
+        }
+      ],
+      "lines": [
+        "dist[s] = 0; pq = [(0, s)]",
+        "d, u = pop_min(pq)",
+        "if d != dist[u]: continue",
+        "for (v, w) in adj[u]:",
+        "if dist[v] > d + w: dist[v] = d + w",
+        "push(pq, (dist[v], v))"
+      ],
+      "distractors": [
+        "if dist[v] < d + w: dist[v] = d + w",
+        "d, u = pop_max(pq)"
+      ]
+    },
+    {
+      "id": "bfs",
+      "title": "BFS shortest path",
+      "topicId": "bfs",
+      "reference": "dist = [-1] * n; dist[s] = 0\nq = deque([s])\nwhile q:\n  u = q.popleft()\n  for v in adj[u]:\n    if dist[v] == -1:\n      dist[v] = dist[u] + 1; q.append(v)",
+      "blanks": [
+        {
+          "prompt": "fill the visit condition",
+          "template": "for v in adj[u]:\n  if ___:\n    dist[v] = dist[u] + 1",
+          "answer": "dist[v] == -1",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the seed step",
+          "template": "dist[s] = 0\n___",
+          "answer": "q = deque([s])",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "dist[s] = 0",
+        "q = deque([s])",
+        "u = q.popleft()",
+        "for v in adj[u]:",
+        "if dist[v] == -1: dist[v] = dist[u]+1",
+        "q.append(v)"
+      ],
+      "distractors": [
+        "dist[s] = 1",
+        "u = q.pop()"
+      ]
+    },
+    {
+      "id": "dfs-iter",
+      "title": "DFS iterative",
+      "topicId": "dfs",
+      "reference": "stack = [s]; seen = {s}\nwhile stack:\n  u = stack.pop()\n  for v in adj[u]:\n    if v not in seen:\n      seen.add(v); stack.append(v)",
+      "blanks": [
+        {
+          "prompt": "fill the mark-seen step",
+          "template": "if v not in seen:\n  ___",
+          "answer": "seen.add(v); stack.append(v)",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the pop step",
+          "template": "while stack:\n  ___",
+          "answer": "u = stack.pop()",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "stack = [s]; seen = {s}",
+        "u = stack.pop()",
+        "for v in adj[u]:",
+        "if v not in seen:",
+        "seen.add(v); stack.append(v)"
+      ],
+      "distractors": [
+        "u = stack.pop(0)",
+        "seen = {}"
+      ]
+    },
+    {
+      "id": "toposort",
+      "title": "Topological sort (Kahn)",
+      "topicId": "toposort",
+      "reference": "indeg from edges; q = nodes with indeg 0\norder = []\nwhile q:\n  u = q.pop(); order.append(u)\n  for v in adj[u]:\n    indeg[v] -= 1\n    if indeg[v] == 0: q.append(v)",
+      "blanks": [
+        {
+          "prompt": "fill the decrement step",
+          "template": "for v in adj[u]:\n  ___\n  if indeg[v] == 0: q.append(v)",
+          "answer": "indeg[v] -= 1",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the seed step",
+          "template": "___\nwhile q: ...",
+          "answer": "q = nodes with indeg 0",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "compute indeg",
+        "q = nodes with indeg 0",
+        "u = q.pop(); order.append(u)",
+        "for v in adj[u]:",
+        "indeg[v] -= 1",
+        "if indeg[v]==0: q.append(v)"
+      ],
+      "distractors": [
+        "q = nodes with outdeg 0",
+        "indeg[v] += 1"
+      ]
+    },
+    {
+      "id": "segtree-update",
+      "title": "Segment tree point update",
+      "topicId": "segtree",
+      "reference": "update(node, l, r, i, val):\n  if l == r: tree[node] = val\n  else:\n    mid = (l+r)//2\n    if i <= mid: update(left, l, mid, i, val)\n    else: update(right, mid+1, r, i, val)\n    tree[node] = combine(tree[left], tree[right])",
+      "blanks": [
+        {
+          "prompt": "fill the pull-up step",
+          "template": "update children...\n___",
+          "answer": "tree[node] = combine(tree[left], tree[right])",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the leaf step",
+          "template": "update(node, l, r, i, val):\n  if l == r: ___",
+          "answer": "tree[node] = val",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "if l == r: tree[node] = val",
+        "mid = (l+r)//2",
+        "if i <= mid: update(left, ...)",
+        "else: update(right, ...)",
+        "tree[node] = combine(...)"
+      ],
+      "distractors": [
+        "tree[node] += val",
+        "if l == r: return"
+      ]
+    },
+    {
+      "id": "fenwick",
+      "title": "Fenwick add/sum",
+      "topicId": "fenwick",
+      "reference": "add(i, delta):\n  while i <= n: bit[i] += delta; i += i & -i\nsum(i):\n  s = 0\n  while i > 0: s += bit[i]; i -= i & -i\n  return s",
+      "blanks": [
+        {
+          "prompt": "fill the lowbit step in add",
+          "template": "while i <= n:\n  bit[i] += delta; ___",
+          "answer": "i += i & -i",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the query step",
+          "template": "while i > 0:\n  ___",
+          "answer": "s += bit[i]; i -= i & -i",
+          "weight": 2
+        }
+      ],
+      "lines": [
+        "while i <= n: bit[i] += delta",
+        "i += i & -i",
+        "s = 0",
+        "while i > 0: s += bit[i]",
+        "i -= i & -i",
+        "return s"
+      ],
+      "distractors": [
+        "i += i & -i",
+        "while i <= n: s += bit[i]"
+      ]
+    },
+    {
+      "id": "knapsack01",
+      "title": "0/1 knapsack",
+      "topicId": "knapsack",
+      "reference": "dp = [0]*(W+1)\nfor wt, val in items:\n  for w from W down to wt:\n    dp[w] = max(dp[w], dp[w-wt] + val)",
+      "blanks": [
+        {
+          "prompt": "fill the loop direction",
+          "template": "for w from ___:\n  dp[w] = max(...)",
+          "answer": "W down to wt",
+          "weight": 3
+        },
+        {
+          "prompt": "fill the init step",
+          "template": "___\nfor wt, val in items: ...",
+          "answer": "dp = [0]*(W+1)",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "dp = [0]*(W+1)",
+        "for wt, val in items:",
+        "for w from W down to wt:",
+        "dp[w] = max(dp[w], dp[w-wt]+val)"
+      ],
+      "distractors": [
+        "for w from wt to W:",
+        "dp[w] = min(dp[w], dp[w-wt] + val)"
+      ]
+    },
+    {
+      "id": "lis-nlogn",
+      "title": "LIS O(n log n)",
+      "topicId": "lis",
+      "reference": "tails = []\nfor x in a:\n  i = lower_bound(tails, x)\n  if i == len(tails): tails.append(x)\n  else: tails[i] = x\nanswer = len(tails)",
+      "blanks": [
+        {
+          "prompt": "fill the search used",
+          "template": "i = ___(tails, x)",
+          "answer": "lower_bound",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the replace step",
+          "template": "if i == len(tails): tails.append(x)\n  else: ___",
+          "answer": "tails[i] = x",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "tails = []",
+        "for x in a:",
+        "i = lower_bound(tails, x)",
+        "if i == len: append(x)",
+        "else: tails[i] = x",
+        "answer = len(tails)"
+      ],
+      "distractors": [
+        "tails.append(x)",
+        "i = upper_bound(tails, x)"
+      ]
+    },
+    {
+      "id": "sieve",
+      "title": "Sieve of Eratosthenes",
+      "topicId": "sieve",
+      "reference": "is_prime = [True]*(n+1)\nis_prime[0]=is_prime[1]=False\nfor i in 2..sqrt(n):\n  if is_prime[i]:\n    for j in i*i..n step i:\n      is_prime[j] = False",
+      "blanks": [
+        {
+          "prompt": "fill the inner start",
+          "template": "for j in ___..n step i: mark false",
+          "answer": "i*i",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the base step",
+          "template": "___\nfor i in 2..sqrt(n): ...",
+          "answer": "is_prime[0]=is_prime[1]=False",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "is_prime all True",
+        "is_prime[0]=is_prime[1]=False",
+        "for i in 2..sqrt(n):",
+        "if is_prime[i]:",
+        "for j in i*i..n step i:",
+        "is_prime[j] = False"
+      ],
+      "distractors": [
+        "is_prime[0]=is_prime[1]=True",
+        "for i in 2..n:"
+      ]
+    },
+    {
+      "id": "binexp",
+      "title": "Binary exponentiation",
+      "topicId": "binexp",
+      "reference": "res = 1; base = a\nwhile e > 0:\n  if e & 1: res = res * base % mod\n  base = base * base % mod\n  e >>= 1",
+      "blanks": [
+        {
+          "prompt": "fill the odd-exponent step",
+          "template": "if e & 1: ___",
+          "answer": "res = res * base % mod",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the square step",
+          "template": "if e & 1: res = res * base % mod\n  ___",
+          "answer": "base = base * base % mod",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "res = 1; base = a",
+        "while e > 0:",
+        "if e & 1: res = res*base % mod",
+        "base = base*base % mod",
+        "e >>= 1"
+      ],
+      "distractors": [
+        "base = base * 2 % mod",
+        "if e & 0: res = res * base % mod"
+      ]
+    },
+    {
+      "id": "lca-lift",
+      "title": "LCA binary lifting",
+      "topicId": "lca",
+      "reference": "up[k][v] = 2^k ancestor\nlift deeper node to same depth\nif u == v: return u\nfor k down to 0:\n  if up[k][u] != up[k][v]:\n    u = up[k][u]; v = up[k][v]\nreturn parent[u]",
+      "blanks": [
+        {
+          "prompt": "fill the equal-depth check",
+          "template": "lift to same depth\nif ___: return u",
+          "answer": "u == v",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the table step",
+          "template": "___\nlift deeper node to same depth",
+          "answer": "build up[k][v] table",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "build up[k][v] table",
+        "lift deeper node",
+        "if u == v: return u",
+        "for k down to 0:",
+        "if up[k][u] != up[k][v]: lift both",
+        "return parent[u]"
+      ],
+      "distractors": [
+        "up[k][v] = 2^(k+v) ancestor",
+        "for k up to 0:"
+      ]
+    },
+    {
+      "id": "kruskal",
+      "title": "Kruskal MST",
+      "topicId": "mst",
+      "reference": "sort edges by w\ninit DSU\ntotal = 0\nfor (u,v,w) in edges:\n  if union(u,v): total += w",
+      "blanks": [
+        {
+          "prompt": "fill the sort key",
+          "template": "sort edges by ___",
+          "answer": "w",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the take step",
+          "template": "for (u,v,w) in edges:\n  if union(u,v): ___",
+          "answer": "total += w",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "sort edges by w",
+        "init DSU",
+        "for (u,v,w) in edges:",
+        "if union(u,v):",
+        "total += w"
+      ],
+      "distractors": [
+        "sort edges by v",
+        "if union(u,v): total += 1"
+      ]
+    },
+    {
+      "id": "kmp",
+      "title": "KMP prefix function",
+      "topicId": "prefixfunc",
+      "reference": "pi = [0]*n\nfor i in 1..n-1:\n  j = pi[i-1]\n  while j > 0 and s[i] != s[j]: j = pi[j-1]\n  if s[i] == s[j]: j += 1\n  pi[i] = j",
+      "blanks": [
+        {
+          "prompt": "fill the fallback step",
+          "template": "while j > 0 and s[i] != s[j]: ___",
+          "answer": "j = pi[j-1]",
+          "weight": 3
+        },
+        {
+          "prompt": "fill the extend step",
+          "template": "if s[i] == s[j]: ___",
+          "answer": "j += 1",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "pi = [0]*n",
+        "j = pi[i-1]",
+        "while j>0 and mismatch: j=pi[j-1]",
+        "if match: j+=1",
+        "pi[i]=j"
+      ],
+      "distractors": [
+        "if s[i] == s[j]: j -= 1",
+        "pi[i] = j + 1"
+      ]
+    },
+    {
+      "id": "bfs01-algo",
+      "title": "0-1 BFS",
+      "topicId": "bfs01",
+      "reference": "dist = [inf]*n; dist[s]=0\ndeque d = [s]\nwhile d:\n  u = d.popleft()\n  for (v,w) in adj[u]:\n    if dist[v] > dist[u]+w:\n      dist[v] = dist[u]+w\n      push_front if w==0 else push_back(v)",
+      "blanks": [
+        {
+          "prompt": "fill the deque choice",
+          "template": "push_front if ___ else push_back(v)",
+          "answer": "w==0",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the seed step",
+          "template": "___\ndeque d = [s]",
+          "answer": "dist[s]=0",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "dist[s]=0; deque [s]",
+        "u = popleft()",
+        "if dist[v] > dist[u]+w:",
+        "dist[v] = dist[u]+w",
+        "push_front if w==0 else push_back"
+      ],
+      "distractors": [
+        "dist[s]=inf",
+        "push_back if w==0 else push_front"
+      ]
+    },
+    {
+      "id": "twoptr-sum",
+      "title": "Two pointers pair sum",
+      "topicId": "twoptr",
+      "reference": "sort(a); l=0; r=n-1\nwhile l < r:\n  s = a[l]+a[r]\n  if s == target: found\n  elif s < target: l += 1\n  else: r -= 1",
+      "blanks": [
+        {
+          "prompt": "fill the move for s < target",
+          "template": "if s < target: ___",
+          "answer": "l += 1",
+          "weight": 1
+        },
+        {
+          "prompt": "fill the init step",
+          "template": "sort(a)\n___",
+          "answer": "l=0; r=n-1",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "sort(a)",
+        "l=0; r=n-1",
+        "while l < r:",
+        "s = a[l]+a[r]",
+        "if s==target: found",
+        "elif s<target: l+=1 else r-=1"
+      ],
+      "distractors": [
+        "l=0; r=0",
+        "if s > target: l += 1"
+      ]
+    },
+    {
+      "id": "prefix-sum",
+      "title": "Prefix sums",
+      "topicId": "prefix",
+      "reference": "pref[0]=0\nfor i: pref[i+1]=pref[i]+a[i]\nsum(l,r) = pref[r+1]-pref[l]",
+      "blanks": [
+        {
+          "prompt": "fill the query formula",
+          "template": "sum(l,r) = ___",
+          "answer": "pref[r+1]-pref[l]",
+          "weight": 1
+        },
+        {
+          "prompt": "fill the build step",
+          "template": "pref[0]=0\n___",
+          "answer": "for i: pref[i+1]=pref[i]+a[i]",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "pref[0]=0",
+        "pref[i+1]=pref[i]+a[i]",
+        "sum(l,r)=pref[r+1]-pref[l]"
+      ],
+      "distractors": [
+        "sum(l,r) = pref[r]-pref[l]",
+        "pref[i+1]=pref[i]-a[i]"
+      ]
+    },
+    {
+      "id": "bellman-ford",
+      "title": "Bellman-Ford",
+      "topicId": "bellman",
+      "reference": "dist[s]=0\nrepeat n-1 times:\n  relax all edges\ncheck one more pass: if relaxable -> negative cycle",
+      "blanks": [
+        {
+          "prompt": "fill the repeat count",
+          "template": "repeat ___ times: relax all",
+          "answer": "n-1",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the init step",
+          "template": "___\nrepeat n-1 times: relax all",
+          "answer": "dist[s]=0",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "dist[s]=0",
+        "repeat n-1 times:",
+        "relax all edges",
+        "one more pass:",
+        "if relaxable -> negative cycle"
+      ],
+      "distractors": [
+        "repeat n times:",
+        "if not relaxable -> negative cycle"
+      ]
+    },
+    {
+      "id": "trie-insert",
+      "title": "Trie insert",
+      "topicId": "trie",
+      "reference": "node = root\nfor ch in word:\n  if ch not in next[node]: create\n  node = next[node][ch]\nmark terminal[node] = True",
+      "blanks": [
+        {
+          "prompt": "fill the walk step",
+          "template": "node = ___",
+          "answer": "next[node][ch]",
+          "weight": 2
+        },
+        {
+          "prompt": "fill the start step",
+          "template": "___\nfor ch in word: ...",
+          "answer": "node = root",
+          "weight": 1
+        }
+      ],
+      "lines": [
+        "node = root",
+        "for ch in word:",
+        "if missing: create",
+        "node = next[node][ch]",
+        "mark terminal"
+      ],
+      "distractors": [
+        "node = next[root][ch]",
+        "mark terminal[root] = True"
+      ]
+    }
+  ]
+}

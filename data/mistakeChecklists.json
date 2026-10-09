@@ -1,0 +1,32 @@
+{
+  "off-by-one": [
+    "recheck every loop bound against a size-1 example",
+    "verify < vs <= on each binary search branch",
+    "test the first and last index by hand"
+  ],
+  "overflow": [
+    "check types before submitting: int vs long long on every product",
+    "take mod after each multiplication, not at the end",
+    "estimate the max intermediate value on paper"
+  ],
+  "missed edge case": [
+    "list n=1, empty input, and max constraints before coding",
+    "run the sample plus one custom edge test",
+    "ask what breaks if all values are equal"
+  ],
+  "wrong greedy": [
+    "try to construct a counterexample before trusting the order",
+    "check whether sorting by a different key breaks it",
+    "consider whether dp is actually required"
+  ],
+  "TLE": [
+    "write the big-O first and multiply by the constraint",
+    "look for an O(n log n) replacement for the inner loop",
+    "check for accidental O(n^2) on already-sorted data"
+  ],
+  "other": [
+    "reread the statement for a missed condition",
+    "reproduce on the smallest failing case",
+    "explain the logic out loud before recoding"
+  ]
+}

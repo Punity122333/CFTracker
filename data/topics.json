@@ -1,0 +1,1786 @@
+{
+  "generatedFrom": "TOPIC LIST in prompt",
+  "note": "resources derived only from cp-algorithms and USACO Guide columns; '-' means empty",
+  "topics": [
+    {
+      "id": "impl",
+      "name": "Implementation and brute force",
+      "group": "foundations",
+      "prerequisites": [],
+      "codeforcesTags": [
+        "implementation",
+        "brute force"
+      ],
+      "ratingRange": [
+        800,
+        1300
+      ],
+      "description": "simulate directly, enumerate cases",
+      "resources": []
+    },
+    {
+      "id": "sorting",
+      "name": "Sorting and custom comparators",
+      "group": "foundations",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [
+        "sortings"
+      ],
+      "ratingRange": [
+        800,
+        1400
+      ],
+      "description": "order data, custom compare",
+      "resources": [
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/silver/sorting-custom"
+        }
+      ]
+    },
+    {
+      "id": "greedy",
+      "name": "Greedy",
+      "group": "foundations",
+      "prerequisites": [
+        "sorting"
+      ],
+      "codeforcesTags": [
+        "greedy"
+      ],
+      "ratingRange": [
+        900,
+        1900
+      ],
+      "description": "locally optimal choices",
+      "resources": [
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/silver/greedy-sorting"
+        }
+      ]
+    },
+    {
+      "id": "constructive",
+      "name": "Constructive algorithms",
+      "group": "foundations",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [
+        "constructive algorithms"
+      ],
+      "ratingRange": [
+        1000,
+        2200
+      ],
+      "description": "build an example meeting constraints",
+      "resources": []
+    },
+    {
+      "id": "binsearch",
+      "name": "Binary search",
+      "group": "foundations",
+      "prerequisites": [
+        "sorting"
+      ],
+      "codeforcesTags": [
+        "binary search"
+      ],
+      "ratingRange": [
+        1000,
+        1800
+      ],
+      "description": "halve a monotonic search space",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/num_methods/binary_search.html"
+        },
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/silver/binary-search"
+        }
+      ]
+    },
+    {
+      "id": "bsanswer",
+      "name": "Binary search on the answer",
+      "group": "foundations",
+      "prerequisites": [
+        "binsearch"
+      ],
+      "codeforcesTags": [
+        "binary search"
+      ],
+      "ratingRange": [
+        1300,
+        2100
+      ],
+      "description": "decide feasibility, search value",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/num_methods/binary_search.html"
+        },
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/silver/binary-search"
+        }
+      ]
+    },
+    {
+      "id": "ternary",
+      "name": "Ternary search",
+      "group": "foundations",
+      "prerequisites": [
+        "binsearch"
+      ],
+      "codeforcesTags": [
+        "ternary search"
+      ],
+      "ratingRange": [
+        1600,
+        2300
+      ],
+      "description": "unimodal function optimum",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/num_methods/ternary_search.html"
+        }
+      ]
+    },
+    {
+      "id": "twoptr",
+      "name": "Two pointers",
+      "group": "foundations",
+      "prerequisites": [
+        "sorting"
+      ],
+      "codeforcesTags": [
+        "two pointers"
+      ],
+      "ratingRange": [
+        1000,
+        1700
+      ],
+      "description": "linear scan with two indices",
+      "resources": [
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/silver/two-pointers"
+        }
+      ]
+    },
+    {
+      "id": "prefix",
+      "name": "Prefix sums and difference arrays",
+      "group": "foundations",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [],
+      "ratingRange": [
+        900,
+        1600
+      ],
+      "description": "range sums in O(1)",
+      "resources": [
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/silver/prefix-sums"
+        }
+      ]
+    },
+    {
+      "id": "window",
+      "name": "Sliding window",
+      "group": "foundations",
+      "prerequisites": [
+        "twoptr",
+        "prefix"
+      ],
+      "codeforcesTags": [],
+      "ratingRange": [
+        1100,
+        1800
+      ],
+      "description": "fixed/variable window aggregates",
+      "resources": []
+    },
+    {
+      "id": "monostack",
+      "name": "Stacks and monotonic stack",
+      "group": "foundations",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [
+        "data structures"
+      ],
+      "ratingRange": [
+        1200,
+        1900
+      ],
+      "description": "next greater/smaller in linear time",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/data_structures/stack_queue_modification.html"
+        }
+      ]
+    },
+    {
+      "id": "monoqueue",
+      "name": "Monotonic deque",
+      "group": "foundations",
+      "prerequisites": [
+        "monostack",
+        "window"
+      ],
+      "codeforcesTags": [
+        "data structures"
+      ],
+      "ratingRange": [
+        1500,
+        2100
+      ],
+      "description": "sliding window min/max",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/data_structures/stack_queue_modification.html"
+        }
+      ]
+    },
+    {
+      "id": "bitmask",
+      "name": "Bit manipulation",
+      "group": "foundations",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [
+        "bitmasks"
+      ],
+      "ratingRange": [
+        1000,
+        1900
+      ],
+      "description": "subsets and flags as integers",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/algebra/bit-manipulation.html"
+        }
+      ]
+    },
+    {
+      "id": "divconq",
+      "name": "Divide and conquer",
+      "group": "foundations",
+      "prerequisites": [
+        "binsearch"
+      ],
+      "codeforcesTags": [
+        "divide and conquer"
+      ],
+      "ratingRange": [
+        1500,
+        2200
+      ],
+      "description": "split, solve, merge",
+      "resources": []
+    },
+    {
+      "id": "mitm",
+      "name": "Meet in the middle",
+      "group": "foundations",
+      "prerequisites": [
+        "bitmask",
+        "sorting"
+      ],
+      "codeforcesTags": [
+        "meet-in-the-middle"
+      ],
+      "ratingRange": [
+        1800,
+        2400
+      ],
+      "description": "split exponential search in half",
+      "resources": []
+    },
+    {
+      "id": "gcd",
+      "name": "GCD, LCM and Euclid",
+      "group": "math",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [
+        "number theory",
+        "math"
+      ],
+      "ratingRange": [
+        900,
+        1600
+      ],
+      "description": "divisibility basics",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/algebra/euclid-algorithm.html"
+        }
+      ]
+    },
+    {
+      "id": "modarith",
+      "name": "Modular arithmetic",
+      "group": "math",
+      "prerequisites": [
+        "gcd"
+      ],
+      "codeforcesTags": [
+        "number theory",
+        "math"
+      ],
+      "ratingRange": [
+        1100,
+        1800
+      ],
+      "description": "arithmetic under modulo",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/algebra/module-inverse.html"
+        }
+      ]
+    },
+    {
+      "id": "binexp",
+      "name": "Binary exponentiation",
+      "group": "math",
+      "prerequisites": [
+        "modarith"
+      ],
+      "codeforcesTags": [
+        "number theory"
+      ],
+      "ratingRange": [
+        1200,
+        1800
+      ],
+      "description": "fast powers and inverses",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/algebra/binary-exp.html"
+        }
+      ]
+    },
+    {
+      "id": "sieve",
+      "name": "Sieve of Eratosthenes",
+      "group": "math",
+      "prerequisites": [
+        "gcd"
+      ],
+      "codeforcesTags": [
+        "number theory"
+      ],
+      "ratingRange": [
+        1100,
+        1800
+      ],
+      "description": "primes up to n fast",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html"
+        }
+      ]
+    },
+    {
+      "id": "factor",
+      "name": "Prime factorization and divisors",
+      "group": "math",
+      "prerequisites": [
+        "sieve"
+      ],
+      "codeforcesTags": [
+        "number theory"
+      ],
+      "ratingRange": [
+        1300,
+        2000
+      ],
+      "description": "factor and enumerate divisors",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/algebra/factorization.html"
+        }
+      ]
+    },
+    {
+      "id": "extgcd",
+      "name": "Extended Euclid and modular inverse",
+      "group": "math",
+      "prerequisites": [
+        "gcd",
+        "modarith"
+      ],
+      "codeforcesTags": [
+        "number theory"
+      ],
+      "ratingRange": [
+        1500,
+        2100
+      ],
+      "description": "solve linear congruences",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/algebra/extended-euclid-algorithm.html"
+        }
+      ]
+    },
+    {
+      "id": "crt",
+      "name": "Chinese remainder theorem",
+      "group": "math",
+      "prerequisites": [
+        "extgcd"
+      ],
+      "codeforcesTags": [
+        "chinese remainder theorem",
+        "number theory"
+      ],
+      "ratingRange": [
+        1800,
+        2500
+      ],
+      "description": "combine modular constraints",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/algebra/chinese-remainder-theorem.html"
+        }
+      ]
+    },
+    {
+      "id": "primality",
+      "name": "Primality tests",
+      "group": "math",
+      "prerequisites": [
+        "sieve",
+        "binexp"
+      ],
+      "codeforcesTags": [
+        "number theory"
+      ],
+      "ratingRange": [
+        1900,
+        2600
+      ],
+      "description": "miller-rabin for large n",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/algebra/primality_tests.html"
+        }
+      ]
+    },
+    {
+      "id": "comb",
+      "name": "Combinatorics (nCr mod p, counting)",
+      "group": "math",
+      "prerequisites": [
+        "modarith",
+        "binexp"
+      ],
+      "codeforcesTags": [
+        "combinatorics"
+      ],
+      "ratingRange": [
+        1300,
+        2100
+      ],
+      "description": "count with factorials and inverses",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/combinatorics/binomial-coefficients.html"
+        }
+      ]
+    },
+    {
+      "id": "inclexcl",
+      "name": "Inclusion-exclusion",
+      "group": "math",
+      "prerequisites": [
+        "comb"
+      ],
+      "codeforcesTags": [
+        "combinatorics",
+        "math"
+      ],
+      "ratingRange": [
+        1600,
+        2300
+      ],
+      "description": "add back intersections",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/combinatorics/inclusion-exclusion.html"
+        }
+      ]
+    },
+    {
+      "id": "catalan",
+      "name": "Catalan numbers and bracket sequences",
+      "group": "math",
+      "prerequisites": [
+        "comb"
+      ],
+      "codeforcesTags": [
+        "combinatorics"
+      ],
+      "ratingRange": [
+        1700,
+        2300
+      ],
+      "description": "balanced sequences counting",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/combinatorics/catalan-numbers.html"
+        }
+      ]
+    },
+    {
+      "id": "prob",
+      "name": "Probability and expected value",
+      "group": "math",
+      "prerequisites": [
+        "comb"
+      ],
+      "codeforcesTags": [
+        "probabilities",
+        "math"
+      ],
+      "ratingRange": [
+        1600,
+        2400
+      ],
+      "description": "linearity of expectation",
+      "resources": []
+    },
+    {
+      "id": "matexp",
+      "name": "Matrix exponentiation",
+      "group": "math",
+      "prerequisites": [
+        "binexp"
+      ],
+      "codeforcesTags": [
+        "matrices"
+      ],
+      "ratingRange": [
+        1700,
+        2400
+      ],
+      "description": "linear recurrences in log n",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/algebra/binary-exp.html"
+        }
+      ]
+    },
+    {
+      "id": "gametheory",
+      "name": "Game theory (Nim, Sprague-Grundy)",
+      "group": "math",
+      "prerequisites": [
+        "bitmask"
+      ],
+      "codeforcesTags": [
+        "games"
+      ],
+      "ratingRange": [
+        1500,
+        2400
+      ],
+      "description": "grundy numbers for impartial games",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/game_theory/sprague-grundy-nim.html"
+        }
+      ]
+    },
+    {
+      "id": "fft",
+      "name": "FFT and NTT",
+      "group": "math",
+      "prerequisites": [
+        "modarith",
+        "binexp"
+      ],
+      "codeforcesTags": [
+        "fft"
+      ],
+      "ratingRange": [
+        2300,
+        3000
+      ],
+      "description": "fast convolution",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/algebra/fft.html"
+        }
+      ]
+    },
+    {
+      "id": "dfs",
+      "name": "DFS",
+      "group": "graphs",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [
+        "dfs and similar",
+        "graphs"
+      ],
+      "ratingRange": [
+        1100,
+        1800
+      ],
+      "description": "explore depth-first",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/depth-first-search.html"
+        },
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/silver/graph-traversal"
+        }
+      ]
+    },
+    {
+      "id": "bfs",
+      "name": "BFS",
+      "group": "graphs",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [
+        "graphs",
+        "shortest paths"
+      ],
+      "ratingRange": [
+        1100,
+        1800
+      ],
+      "description": "shortest path unweighted",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/breadth-first-search.html"
+        },
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/silver/graph-traversal"
+        }
+      ]
+    },
+    {
+      "id": "bfs01",
+      "name": "0-1 BFS",
+      "group": "graphs",
+      "prerequisites": [
+        "bfs"
+      ],
+      "codeforcesTags": [
+        "graphs",
+        "shortest paths"
+      ],
+      "ratingRange": [
+        1700,
+        2200
+      ],
+      "description": "deque for 0/1 weights",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/01_bfs.html"
+        }
+      ]
+    },
+    {
+      "id": "components",
+      "name": "Components, flood fill, bipartite check",
+      "group": "graphs",
+      "prerequisites": [
+        "dfs",
+        "bfs"
+      ],
+      "codeforcesTags": [
+        "graphs",
+        "dfs and similar"
+      ],
+      "ratingRange": [
+        1200,
+        1900
+      ],
+      "description": "connected parts and coloring",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/bipartite-check.html"
+        },
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/silver/flood-fill"
+        }
+      ]
+    },
+    {
+      "id": "toposort",
+      "name": "Topological sort",
+      "group": "graphs",
+      "prerequisites": [
+        "dfs"
+      ],
+      "codeforcesTags": [
+        "graphs",
+        "dfs and similar"
+      ],
+      "ratingRange": [
+        1400,
+        2100
+      ],
+      "description": "order a DAG",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/topological-sort.html"
+        }
+      ]
+    },
+    {
+      "id": "dijkstra",
+      "name": "Dijkstra",
+      "group": "graphs",
+      "prerequisites": [
+        "bfs"
+      ],
+      "codeforcesTags": [
+        "shortest paths",
+        "graphs"
+      ],
+      "ratingRange": [
+        1500,
+        2200
+      ],
+      "description": "shortest path non-negative weights",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/dijkstra.html"
+        },
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/gold/shortest-paths"
+        }
+      ]
+    },
+    {
+      "id": "bellman",
+      "name": "Bellman-Ford and negative cycles",
+      "group": "graphs",
+      "prerequisites": [
+        "dijkstra"
+      ],
+      "codeforcesTags": [
+        "shortest paths",
+        "graphs"
+      ],
+      "ratingRange": [
+        1700,
+        2300
+      ],
+      "description": "handle negative edges",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/bellman_ford.html"
+        }
+      ]
+    },
+    {
+      "id": "floyd",
+      "name": "Floyd-Warshall",
+      "group": "graphs",
+      "prerequisites": [
+        "dijkstra"
+      ],
+      "codeforcesTags": [
+        "shortest paths",
+        "graphs"
+      ],
+      "ratingRange": [
+        1600,
+        2200
+      ],
+      "description": "all-pairs shortest paths",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/all-pair-shortest-path-floyd-warshall.html"
+        }
+      ]
+    },
+    {
+      "id": "dsu",
+      "name": "Disjoint set union",
+      "group": "graphs",
+      "prerequisites": [
+        "dfs"
+      ],
+      "codeforcesTags": [
+        "dsu",
+        "graphs"
+      ],
+      "ratingRange": [
+        1400,
+        2100
+      ],
+      "description": "union-find connectivity",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/data_structures/disjoint_set_union.html"
+        },
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/gold/dsu"
+        }
+      ]
+    },
+    {
+      "id": "mst",
+      "name": "Minimum spanning tree",
+      "group": "graphs",
+      "prerequisites": [
+        "dsu"
+      ],
+      "codeforcesTags": [
+        "graphs",
+        "dsu"
+      ],
+      "ratingRange": [
+        1500,
+        2200
+      ],
+      "description": "kruskal and prim",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/mst_kruskal.html"
+        },
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/gold/mst"
+        }
+      ]
+    },
+    {
+      "id": "scc",
+      "name": "Strongly connected components",
+      "group": "graphs",
+      "prerequisites": [
+        "dfs",
+        "toposort"
+      ],
+      "codeforcesTags": [
+        "graphs",
+        "dfs and similar"
+      ],
+      "ratingRange": [
+        2000,
+        2600
+      ],
+      "description": "condense directed graph",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/strongly-connected-components.html"
+        }
+      ]
+    },
+    {
+      "id": "bridges",
+      "name": "Bridges and articulation points",
+      "group": "graphs",
+      "prerequisites": [
+        "dfs"
+      ],
+      "codeforcesTags": [
+        "graphs",
+        "dfs and similar"
+      ],
+      "ratingRange": [
+        2000,
+        2600
+      ],
+      "description": "critical edges and vertices",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/bridge-searching.html"
+        }
+      ]
+    },
+    {
+      "id": "twosat",
+      "name": "2-SAT",
+      "group": "graphs",
+      "prerequisites": [
+        "scc"
+      ],
+      "codeforcesTags": [
+        "2-sat"
+      ],
+      "ratingRange": [
+        2200,
+        2800
+      ],
+      "description": "boolean satisfiability via SCC",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/2SAT.html"
+        }
+      ]
+    },
+    {
+      "id": "euler",
+      "name": "Euler paths and cycles",
+      "group": "graphs",
+      "prerequisites": [
+        "dfs"
+      ],
+      "codeforcesTags": [
+        "graphs"
+      ],
+      "ratingRange": [
+        2000,
+        2600
+      ],
+      "description": "traverse every edge once",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/euler_path.html"
+        }
+      ]
+    },
+    {
+      "id": "flows",
+      "name": "Max flow and bipartite matching",
+      "group": "graphs",
+      "prerequisites": [
+        "bfs",
+        "dijkstra"
+      ],
+      "codeforcesTags": [
+        "flows",
+        "graph matchings"
+      ],
+      "ratingRange": [
+        2300,
+        3000
+      ],
+      "description": "push flow, match pairs",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/edmonds_karp.html"
+        }
+      ]
+    },
+    {
+      "id": "treebasics",
+      "name": "Tree traversals and subtree queries",
+      "group": "trees",
+      "prerequisites": [
+        "dfs"
+      ],
+      "codeforcesTags": [
+        "trees",
+        "dfs and similar"
+      ],
+      "ratingRange": [
+        1200,
+        1900
+      ],
+      "description": "euler tour of trees",
+      "resources": [
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/gold/tree-euler"
+        }
+      ]
+    },
+    {
+      "id": "diameter",
+      "name": "Tree diameter and centers",
+      "group": "trees",
+      "prerequisites": [
+        "treebasics",
+        "bfs"
+      ],
+      "codeforcesTags": [
+        "trees"
+      ],
+      "ratingRange": [
+        1400,
+        2000
+      ],
+      "description": "longest path in tree",
+      "resources": []
+    },
+    {
+      "id": "treedp",
+      "name": "Tree DP",
+      "group": "trees",
+      "prerequisites": [
+        "treebasics",
+        "dpbasics"
+      ],
+      "codeforcesTags": [
+        "trees",
+        "dp"
+      ],
+      "ratingRange": [
+        1500,
+        2300
+      ],
+      "description": "dp on subtrees",
+      "resources": [
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/gold/dp-trees"
+        }
+      ]
+    },
+    {
+      "id": "lca",
+      "name": "LCA and binary lifting",
+      "group": "trees",
+      "prerequisites": [
+        "treebasics"
+      ],
+      "codeforcesTags": [
+        "trees"
+      ],
+      "ratingRange": [
+        1600,
+        2300
+      ],
+      "description": "jump ancestors in log",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/lca_binary_lifting.html"
+        }
+      ]
+    },
+    {
+      "id": "reroot",
+      "name": "Rerooting DP",
+      "group": "trees",
+      "prerequisites": [
+        "treedp"
+      ],
+      "codeforcesTags": [
+        "trees",
+        "dp"
+      ],
+      "ratingRange": [
+        1900,
+        2600
+      ],
+      "description": "recompute dp for all roots",
+      "resources": []
+    },
+    {
+      "id": "hld",
+      "name": "Heavy-light decomposition",
+      "group": "trees",
+      "prerequisites": [
+        "lca",
+        "segtree"
+      ],
+      "codeforcesTags": [
+        "trees",
+        "data structures"
+      ],
+      "ratingRange": [
+        2300,
+        3000
+      ],
+      "description": "path queries on trees",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/graph/hld.html"
+        }
+      ]
+    },
+    {
+      "id": "centroid",
+      "name": "Centroid decomposition",
+      "group": "trees",
+      "prerequisites": [
+        "treedp",
+        "lca"
+      ],
+      "codeforcesTags": [
+        "trees",
+        "divide and conquer"
+      ],
+      "ratingRange": [
+        2400,
+        3000
+      ],
+      "description": "divide tree by centroids",
+      "resources": []
+    },
+    {
+      "id": "dpbasics",
+      "name": "DP basics",
+      "group": "dp",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [
+        "dp"
+      ],
+      "ratingRange": [
+        1000,
+        1700
+      ],
+      "description": "states and transitions",
+      "resources": [
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/gold/intro-dp"
+        }
+      ]
+    },
+    {
+      "id": "griddp",
+      "name": "Grid and path DP",
+      "group": "dp",
+      "prerequisites": [
+        "dpbasics"
+      ],
+      "codeforcesTags": [
+        "dp"
+      ],
+      "ratingRange": [
+        1100,
+        1800
+      ],
+      "description": "dp over rows and columns",
+      "resources": []
+    },
+    {
+      "id": "lis",
+      "name": "Longest increasing subsequence",
+      "group": "dp",
+      "prerequisites": [
+        "dpbasics",
+        "binsearch"
+      ],
+      "codeforcesTags": [
+        "dp",
+        "data structures"
+      ],
+      "ratingRange": [
+        1500,
+        2200
+      ],
+      "description": "patience sorting variant",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/dynamic_programming/longest_increasing_subsequence.html"
+        }
+      ]
+    },
+    {
+      "id": "knapsack",
+      "name": "Knapsack",
+      "group": "dp",
+      "prerequisites": [
+        "dpbasics"
+      ],
+      "codeforcesTags": [
+        "dp"
+      ],
+      "ratingRange": [
+        1400,
+        2200
+      ],
+      "description": "weight vs value tradeoff",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/dynamic_programming/knapsack.html"
+        },
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/gold/knapsack"
+        }
+      ]
+    },
+    {
+      "id": "seqdp",
+      "name": "Sequence DP (LCS, edit distance)",
+      "group": "dp",
+      "prerequisites": [
+        "dpbasics"
+      ],
+      "codeforcesTags": [
+        "dp",
+        "strings"
+      ],
+      "ratingRange": [
+        1400,
+        2100
+      ],
+      "description": "align two sequences",
+      "resources": []
+    },
+    {
+      "id": "intervaldp",
+      "name": "Interval DP",
+      "group": "dp",
+      "prerequisites": [
+        "dpbasics"
+      ],
+      "codeforcesTags": [
+        "dp"
+      ],
+      "ratingRange": [
+        1800,
+        2500
+      ],
+      "description": "dp over segments",
+      "resources": [
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/gold/dp-ranges"
+        }
+      ]
+    },
+    {
+      "id": "bitmaskdp",
+      "name": "Bitmask DP",
+      "group": "dp",
+      "prerequisites": [
+        "dpbasics",
+        "bitmask"
+      ],
+      "codeforcesTags": [
+        "dp",
+        "bitmasks"
+      ],
+      "ratingRange": [
+        1700,
+        2400
+      ],
+      "description": "dp over subsets",
+      "resources": [
+        {
+          "label": "usaco",
+          "url": "https://usaco.guide/gold/dp-bitmasks"
+        }
+      ]
+    },
+    {
+      "id": "digitdp",
+      "name": "Digit DP",
+      "group": "dp",
+      "prerequisites": [
+        "dpbasics"
+      ],
+      "codeforcesTags": [
+        "dp"
+      ],
+      "ratingRange": [
+        1900,
+        2500
+      ],
+      "description": "count by digit constraints",
+      "resources": []
+    },
+    {
+      "id": "dpopt",
+      "name": "DP optimizations (D&C, convex hull trick)",
+      "group": "dp",
+      "prerequisites": [
+        "dpbasics",
+        "divconq"
+      ],
+      "codeforcesTags": [
+        "dp",
+        "divide and conquer"
+      ],
+      "ratingRange": [
+        2400,
+        3100
+      ],
+      "description": "speed up transitions",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/dynamic_programming/divide-and-conquer-dp.html"
+        }
+      ]
+    },
+    {
+      "id": "heap",
+      "name": "Priority queue and heaps",
+      "group": "data structures",
+      "prerequisites": [
+        "sorting"
+      ],
+      "codeforcesTags": [
+        "data structures"
+      ],
+      "ratingRange": [
+        1100,
+        1800
+      ],
+      "description": "top-k and scheduling",
+      "resources": []
+    },
+    {
+      "id": "orderedset",
+      "name": "Ordered sets and multisets",
+      "group": "data structures",
+      "prerequisites": [
+        "sorting"
+      ],
+      "codeforcesTags": [
+        "data structures"
+      ],
+      "ratingRange": [
+        1200,
+        1900
+      ],
+      "description": "balanced BST basics",
+      "resources": []
+    },
+    {
+      "id": "fenwick",
+      "name": "Fenwick tree",
+      "group": "data structures",
+      "prerequisites": [
+        "prefix"
+      ],
+      "codeforcesTags": [
+        "data structures"
+      ],
+      "ratingRange": [
+        1500,
+        2200
+      ],
+      "description": "prefix sums with updates",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/data_structures/fenwick.html"
+        }
+      ]
+    },
+    {
+      "id": "segtree",
+      "name": "Segment tree",
+      "group": "data structures",
+      "prerequisites": [
+        "prefix"
+      ],
+      "codeforcesTags": [
+        "data structures"
+      ],
+      "ratingRange": [
+        1600,
+        2400
+      ],
+      "description": "range query and update",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/data_structures/segment_tree.html"
+        }
+      ]
+    },
+    {
+      "id": "lazyseg",
+      "name": "Lazy segment tree",
+      "group": "data structures",
+      "prerequisites": [
+        "segtree"
+      ],
+      "codeforcesTags": [
+        "data structures"
+      ],
+      "ratingRange": [
+        2000,
+        2700
+      ],
+      "description": "deferred range updates",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/data_structures/segment_tree.html"
+        }
+      ]
+    },
+    {
+      "id": "sparse",
+      "name": "Sparse table",
+      "group": "data structures",
+      "prerequisites": [
+        "prefix"
+      ],
+      "codeforcesTags": [
+        "data structures"
+      ],
+      "ratingRange": [
+        1600,
+        2200
+      ],
+      "description": "static RMQ in O(1)",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/data_structures/sparse-table.html"
+        }
+      ]
+    },
+    {
+      "id": "sqrt",
+      "name": "Sqrt decomposition and Mo's algorithm",
+      "group": "data structures",
+      "prerequisites": [
+        "prefix"
+      ],
+      "codeforcesTags": [
+        "data structures"
+      ],
+      "ratingRange": [
+        2000,
+        2600
+      ],
+      "description": "block queries offline",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/data_structures/sqrt_decomposition.html"
+        }
+      ]
+    },
+    {
+      "id": "trie",
+      "name": "Trie",
+      "group": "data structures",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [
+        "strings",
+        "data structures"
+      ],
+      "ratingRange": [
+        1500,
+        2200
+      ],
+      "description": "prefix tree for strings",
+      "resources": []
+    },
+    {
+      "id": "treap",
+      "name": "Treap and balanced BSTs",
+      "group": "data structures",
+      "prerequisites": [
+        "heap"
+      ],
+      "codeforcesTags": [
+        "data structures"
+      ],
+      "ratingRange": [
+        2400,
+        3000
+      ],
+      "description": "randomized BST",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/data_structures/treap.html"
+        }
+      ]
+    },
+    {
+      "id": "hashing",
+      "name": "String hashing",
+      "group": "strings",
+      "prerequisites": [
+        "modarith"
+      ],
+      "codeforcesTags": [
+        "hashing",
+        "strings"
+      ],
+      "ratingRange": [
+        1500,
+        2300
+      ],
+      "description": "compare substrings fast",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/string/string-hashing.html"
+        }
+      ]
+    },
+    {
+      "id": "prefixfunc",
+      "name": "Prefix function and KMP",
+      "group": "strings",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [
+        "strings"
+      ],
+      "ratingRange": [
+        1600,
+        2300
+      ],
+      "description": "linear pattern matching",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/string/prefix-function.html"
+        }
+      ]
+    },
+    {
+      "id": "zfunc",
+      "name": "Z-function",
+      "group": "strings",
+      "prerequisites": [
+        "prefixfunc"
+      ],
+      "codeforcesTags": [
+        "strings"
+      ],
+      "ratingRange": [
+        1600,
+        2300
+      ],
+      "description": "matches from each suffix",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/string/z-function.html"
+        }
+      ]
+    },
+    {
+      "id": "manacher",
+      "name": "Manacher's algorithm",
+      "group": "strings",
+      "prerequisites": [
+        "zfunc"
+      ],
+      "codeforcesTags": [
+        "strings"
+      ],
+      "ratingRange": [
+        1900,
+        2500
+      ],
+      "description": "all palindromes linear",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/string/manacher.html"
+        }
+      ]
+    },
+    {
+      "id": "suffixarr",
+      "name": "Suffix array",
+      "group": "strings",
+      "prerequisites": [
+        "hashing",
+        "sorting"
+      ],
+      "codeforcesTags": [
+        "string suffix structures",
+        "strings"
+      ],
+      "ratingRange": [
+        2300,
+        3000
+      ],
+      "description": "sort all suffixes",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/string/suffix-array.html"
+        }
+      ]
+    },
+    {
+      "id": "ahocorasick",
+      "name": "Aho-Corasick",
+      "group": "strings",
+      "prerequisites": [
+        "trie",
+        "prefixfunc"
+      ],
+      "codeforcesTags": [
+        "strings"
+      ],
+      "ratingRange": [
+        2300,
+        3000
+      ],
+      "description": "many patterns at once",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/string/aho_corasick.html"
+        }
+      ]
+    },
+    {
+      "id": "geometry",
+      "name": "Geometry basics",
+      "group": "geometry",
+      "prerequisites": [
+        "impl"
+      ],
+      "codeforcesTags": [
+        "geometry"
+      ],
+      "ratingRange": [
+        1500,
+        2300
+      ],
+      "description": "points, vectors, segments",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/geometry/basic-geometry.html"
+        }
+      ]
+    },
+    {
+      "id": "convexhull",
+      "name": "Convex hull",
+      "group": "geometry",
+      "prerequisites": [
+        "geometry",
+        "sorting"
+      ],
+      "codeforcesTags": [
+        "geometry"
+      ],
+      "ratingRange": [
+        1900,
+        2600
+      ],
+      "description": "outer hull of points",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/geometry/convex-hull.html"
+        }
+      ]
+    },
+    {
+      "id": "sweepline",
+      "name": "Line sweep",
+      "group": "geometry",
+      "prerequisites": [
+        "geometry",
+        "sorting"
+      ],
+      "codeforcesTags": [
+        "geometry",
+        "data structures"
+      ],
+      "ratingRange": [
+        2000,
+        2700
+      ],
+      "description": "events in order",
+      "resources": []
+    },
+    {
+      "id": "interactive",
+      "name": "Interactive problems",
+      "group": "other",
+      "prerequisites": [
+        "binsearch"
+      ],
+      "codeforcesTags": [
+        "interactive"
+      ],
+      "ratingRange": [
+        1300,
+        2200
+      ],
+      "description": "query and adapt",
+      "resources": []
+    },
+    {
+      "id": "expression",
+      "name": "Expression parsing",
+      "group": "other",
+      "prerequisites": [
+        "monostack"
+      ],
+      "codeforcesTags": [
+        "expression parsing"
+      ],
+      "ratingRange": [
+        1800,
+        2300
+      ],
+      "description": "evaluate grammars",
+      "resources": [
+        {
+          "label": "cp-algorithms",
+          "url": "https://cp-algorithms.com/string/expression_parsing.html"
+        }
+      ]
+    }
+  ]
+}

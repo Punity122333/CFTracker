@@ -1,0 +1,8 @@
+{
+  "off-by-one": ["binsearch", "bsanswer", "twoptr", "prefix"],
+  "overflow": ["comb", "modarith", "binexp", "matexp"],
+  "missed edge case": ["impl", "constructive", "greedy"],
+  "wrong greedy": ["greedy", "dpbasics", "knapsack"],
+  "TLE": ["binsearch", "twoptr", "sorting", "dpbasics"],
+  "other": []
+}
