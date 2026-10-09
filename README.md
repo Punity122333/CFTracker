@@ -21,6 +21,7 @@ npm run check-links  # manual link validation, never fails the build
 ## Vercel deploy
 
 - Import repo, framework preset Next.js, no env vars needed.
+- Live: https://cftracker-theta.vercel.app
 - Default settings work: no custom server, no Docker, no filesystem writes.
 - Route handlers are stateless; caching via `fetch next.revalidate` + Cache-Control.
 
