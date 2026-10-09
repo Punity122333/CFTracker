@@ -97,8 +97,8 @@ export default function ClientShell() {
       )}
       {help && (
         <div style={{ borderTop: "1px solid var(--hairline)", padding: 16 }} className="mono small">
-          <p>shortcuts: j/k move, x toggle, o open link, / search, ctrl+k palette, ? this help</p>
-          <p>on a selected row (click it first): e easy, r right, h hard, d hide</p>
+          <p>shortcuts: <kbd className="chip">j</kbd>/<kbd className="chip">k</kbd> move, <kbd className="chip">x</kbd> toggle, <kbd className="chip">o</kbd> open link, <kbd className="chip">/</kbd> search, <kbd className="chip">ctrl+k</kbd> palette, <kbd className="chip">?</kbd> this help</p>
+          <p>on a selected row (click it first): <kbd className="chip">e</kbd> easy, <kbd className="chip">r</kbd> right, <kbd className="chip">h</kbd> hard, <kbd className="chip">d</kbd> hide</p>
           <button className="btn" onClick={() => setHelp(false)}>close</button>
         </div>
       )}

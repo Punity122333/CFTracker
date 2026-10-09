@@ -292,8 +292,8 @@ export default function Dashboard() {
         <section>
           <h2>daily problem</h2>
           <div className="spotlight">
-            <a href={daily.url} target="_blank" rel="noreferrer" style={{ fontWeight: 600 }}>{daily.title}</a>{" "}
-            <span className="muted mono small">{daily.key}{daily.difficulty ? ` · ${daily.difficulty}` : ""}</span>
+            <p style={{ margin: "0 0 2px" }}><span className="live-dot" aria-hidden="true" /><a href={daily.url} target="_blank" rel="noreferrer" style={{ fontWeight: 600 }}>{daily.title}</a>{" "}
+            <span className="muted mono small">{daily.key}{daily.difficulty ? ` · ${daily.difficulty}` : ""}</span></p>
             <p className="small muted" style={{ margin: "2px 0 0" }}>{daily.reason} — pinned for today.</p>
           </div>
         </section>
@@ -446,6 +446,8 @@ export default function Dashboard() {
                   strokeLinejoin="round"
                   strokeLinecap="round"
                   points={pts.join(" ")}
+                  pathLength={1}
+                  className="chart-line"
                 />
                 <circle cx={last[0]} cy={last[1]} r="3.5" fill="var(--accent)" />
               </svg>
@@ -473,7 +475,7 @@ export default function Dashboard() {
             <div className="panel">
               <svg width="100%" height="80" viewBox="0 0 700 80" role="img" aria-label="ability history" style={{ display: "block" }}>
                 <line x1="40" y1="68" x2="684" y2="68" stroke="var(--hairline)" strokeWidth="1" />
-                <polyline fill="none" stroke="var(--good)" strokeWidth="2" strokeLinejoin="round" points={pts.join(" ")} />
+                <polyline fill="none" stroke="var(--good)" strokeWidth="2" strokeLinejoin="round" points={pts.join(" ")} pathLength={1} className="chart-line" />
               </svg>
               <div className="row small" style={{ justifyContent: "space-between" }}>
                 <span className="mono muted">{first.date} · {first.globalTheta}</span>
